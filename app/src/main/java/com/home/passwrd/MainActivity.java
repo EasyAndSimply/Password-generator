@@ -29,36 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         findeView();
+        setupListner();
 
-        btnGener.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                passwordLenght = Integer.parseInt(edNumbers.getText().toString());
-                PasswordGenerated passwordGenerated = new PasswordGenerated();
-                passwordGenerated.setIsNumberEnabled(cbNumbers.isChecked());
-                passwordGenerated.setIsSimbolsEnabled(cbSimbols.isChecked());
-                passwordGenerated.setIsLettersEnabled(cbLetters.isChecked());
-                passwordGenerated.CheckNumbersBox(true);
-                passwordGenerated.PassLenghtCheck(passwordLenght);
-                passwordGenerated.buildPassword();
-                thisispass = passwordGenerated.buildPassword();
-                tvPassword.setText(thisispass);
-
-            }
-        });
-
-        btnBuffer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String text;
-                text = tvPassword.getText().toString();
-
-                myClip = ClipData.newPlainText("text", text);
-                myClipboard.setPrimaryClip(myClip);
-
-                Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     protected void onRestoreInstanceState(Bundle savedInstanceState){
@@ -83,4 +55,38 @@ public class MainActivity extends AppCompatActivity {
         btnBuffer = (Button) findViewById(R.id.btnBuffer);
         myClipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
     }
+
+
+    void setupListner(){
+        btnGener.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                passwordLenght = Integer.parseInt(edNumbers.getText().toString());
+                PasswordGenerator passwordGenerated = new PasswordGenerator();
+                passwordGenerated.setIsNumberEnabled(cbNumbers.isChecked());
+                passwordGenerated.setIsSimbolsEnabled(cbSimbols.isChecked());
+                passwordGenerated.setIsLettersEnabled(cbLetters.isChecked());
+                passwordGenerated.CheckNumbersBox(true);
+                passwordGenerated.PassLenghtCheck(passwordLenght);
+                passwordGenerated.buildPassword();
+                thisispass = passwordGenerated.buildPassword();
+                tvPassword.setText(thisispass);
+
+            }
+        });
+
+        btnBuffer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text;
+                text = tvPassword.getText().toString();
+
+                myClip = ClipData.newPlainText("text", text);
+                myClipboard.setPrimaryClip(myClip);
+
+                Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+}
 }

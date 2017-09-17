@@ -20,12 +20,11 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox cbNumbers;
     private CheckBox cbSimbols;
     private CheckBox cbLetters;
-    public EditText edNumbers;
+    private EditText edNumbers;
     private ClipboardManager myClipboard;
     private ClipData myClip;
     private String saved;
     public StringBuilder thisispass;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
     }
 
-
     void setupListeners() {
         btnGener.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void generatePassword() {
-
         passwordLenght = Integer.parseInt(edNumbers.getText().toString());
         PasswordGenerator passwordGenerated = new PasswordGenerator();
         passwordGenerated.setIsNumberEnabled(cbNumbers.isChecked());
@@ -90,9 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void copyToClipboard(){
-        String text;
-        text = tvPassword.getText().toString();
-        myClip = ClipData.newPlainText("text", text);
+        myClip = ClipData.newPlainText("text", thisispass);
         myClipboard.setPrimaryClip(myClip);
         Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
     }

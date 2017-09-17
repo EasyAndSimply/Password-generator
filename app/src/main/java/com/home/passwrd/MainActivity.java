@@ -11,41 +11,45 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
+    private static int LAYOUT = R.layout.activity_main;
     private int passwordLenght = 1;
     public TextView tvPassword;
     public Button btnGener, btnBuffer;
-    public CheckBox cbNumbers,cbSimbols,cbLetters;
+    public CheckBox cbNumbers, cbSimbols, cbLetters;
     public EditText edNumbers;
     private ClipboardManager myClipboard;
     private ClipData myClip;
     private String saved;
     public StringBuilder thisispass;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setContentView(LAYOUT);
 
-        findeView();
-        setupListner();
+
+        findViews();
+        setupListeners();
 
     }
 
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         saved = savedInstanceState.getString("saved");
         tvPassword.setText(saved);
     }
 
-    protected void onSaveInstanceState(Bundle outState){
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("saved" , saved);
+        outState.putString("saved", saved);
 
     }
 
-    void findeView(){
+    void findViews() {
         tvPassword = (TextView) findViewById(R.id.tvPassword);
         cbNumbers = (CheckBox) findViewById(R.id.cbNumbers);
         cbSimbols = (CheckBox) findViewById(R.id.cbSimbols);
@@ -53,40 +57,47 @@ public class MainActivity extends AppCompatActivity {
         btnGener = (Button) findViewById(R.id.btnGener);
         edNumbers = (EditText) findViewById(R.id.edNumbers);
         btnBuffer = (Button) findViewById(R.id.btnBuffer);
-        myClipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+        myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
     }
 
 
-    void setupListner(){
+    void setupListeners() {
         btnGener.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                passwordLenght = Integer.parseInt(edNumbers.getText().toString());
-                PasswordGenerator passwordGenerated = new PasswordGenerator();
-                passwordGenerated.setIsNumberEnabled(cbNumbers.isChecked());
-                passwordGenerated.setIsSimbolsEnabled(cbSimbols.isChecked());
-                passwordGenerated.setIsLettersEnabled(cbLetters.isChecked());
-                passwordGenerated.CheckNumbersBox(true);
-                passwordGenerated.PassLenghtCheck(passwordLenght);
-                passwordGenerated.buildPassword();
-                thisispass = passwordGenerated.buildPassword();
-                tvPassword.setText(thisispass);
-
+                generatePassword();
             }
         });
 
         btnBuffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text;
-                text = tvPassword.getText().toString();
-
-                myClip = ClipData.newPlainText("text", text);
-                myClipboard.setPrimaryClip(myClip);
-
-                Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
+                copyToClipboard();
             }
         });
 
-}
+    }
+    void generatePassword() {
+
+        passwordLenght = Integer.parseInt(edNumbers.getText().toString());
+        PasswordGenerator passwordGenerated = new PasswordGenerator();
+        passwordGenerated.setIsNumberEnabled(cbNumbers.isChecked());
+        passwordGenerated.setIsSimbolsEnabled(cbSimbols.isChecked());
+        passwordGenerated.setIsLettersEnabled(cbLetters.isChecked());
+        passwordGenerated.CheckNumbersBox(true);
+        passwordGenerated.PassLenghtCheck(passwordLenght);
+        passwordGenerated.buildPassword();
+        thisispass = passwordGenerated.buildPassword();
+        tvPassword.setText(thisispass);
+    }
+
+    void copyToClipboard(){
+        String text;
+        text = tvPassword.getText().toString();
+
+        myClip = ClipData.newPlainText("text", text);
+        myClipboard.setPrimaryClip(myClip);
+
+        Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
+    }
 }

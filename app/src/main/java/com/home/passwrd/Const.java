@@ -6,7 +6,7 @@ package com.home.passwrd;
 
 public class Const {
 
-    public static final String KOPYKEYTEXT = "text";
+    public static final String CLIPBOARD_KEY = "text";
     public static final String NUMBERS = "0123456789";
     public static final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_";
     public static final String SYMBOLS = "<>?,./!@#$%^&*())_+{}|";

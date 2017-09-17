@@ -13,9 +13,7 @@ public class PasswordGenerator {
     boolean isNumberEnabled;
     boolean isSimbolEnabled;
     boolean isLetterEnablet;
-    private final String NUMBERS = "0123456789";
-    private final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_";
-    private final String SYMBOLS = "<>?,./!@#$%^&*())_+{}|";
+
     private int passwordLenght = 1;
     private String result = "";
     public StringBuilder randomPass;
@@ -36,13 +34,13 @@ public class PasswordGenerator {
         if (check = true) {
             if ((isNumberEnabled | isSimbolEnabled | isLetterEnablet)== true) {
                 if (isNumberEnabled == true) {
-                    result = result + NUMBERS;
+                    result = result + Const.NUMBERS;
                 }
                 if (isSimbolEnabled == true) {
-                    result = result + SYMBOLS;
+                    result = result + Const.SYMBOLS;
                 }
                 if (isLetterEnablet == true) {
-                    result = result + LETTERS;
+                    result = result + Const.LETTERS;
                 }else{}
             }
         }

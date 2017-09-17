@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void copyToClipboard(){
-        myClip = ClipData.newPlainText("text", tvPassword.getText());
+        myClip = ClipData.newPlainText(Const.KOPYKEYTEXT, tvPassword.getText());
         myClipboard.setPrimaryClip(myClip);
         Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
     }

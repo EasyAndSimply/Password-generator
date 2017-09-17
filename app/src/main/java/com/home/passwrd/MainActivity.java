@@ -11,13 +11,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
     private static int LAYOUT = R.layout.activity_main;
     private int passwordLenght = 1;
-    public TextView tvPassword;
-    public Button btnGener, btnBuffer;
-    public CheckBox cbNumbers, cbSimbols, cbLetters;
+    private TextView tvPassword;
+    private Button  btnBuffer;
+    private Button btnGener;
+    private CheckBox cbNumbers;
+    private CheckBox cbSimbols;
+    private CheckBox cbLetters;
     public EditText edNumbers;
     private ClipboardManager myClipboard;
     private ClipData myClip;
@@ -30,11 +32,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setContentView(LAYOUT);
-
-
         findViews();
         setupListeners();
-
     }
 
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("saved", saved);
-
     }
 
     void findViews() {
@@ -75,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 copyToClipboard();
             }
         });
-
     }
+
     void generatePassword() {
 
         passwordLenght = Integer.parseInt(edNumbers.getText().toString());
@@ -94,10 +92,8 @@ public class MainActivity extends AppCompatActivity {
     void copyToClipboard(){
         String text;
         text = tvPassword.getText().toString();
-
         myClip = ClipData.newPlainText("text", text);
         myClipboard.setPrimaryClip(myClip);
-
         Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
     }
 }

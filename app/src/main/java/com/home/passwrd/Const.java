@@ -10,4 +10,5 @@ public class Const {
     public static final String NUMBERS = "0123456789";
     public static final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_";
     public static final String SYMBOLS = "<>?,./!@#$%^&*())_+{}|";
+    public static final String SAVE_INSTANCE_KEY = "saved";
 }

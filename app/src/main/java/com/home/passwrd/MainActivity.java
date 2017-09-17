@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static int LAYOUT = R.layout.activity_main;
-    private int passwordLenght = 1;
+    private int passwordLenght;
     private TextView tvPassword;
     private Button  btnBuffer;
     private Button btnGener;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edNumbers;
     private ClipboardManager myClipboard;
     private ClipData myClip;
-    private String saved;
+    private String savedState;
     public StringBuilder passwordEnd;
 
     @Override
@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        saved = savedInstanceState.getString("saved");
-        tvPassword.setText(saved);
+        savedState = savedInstanceState.getString(Const.SAVE_INSTANCE_KEY);
+        tvPassword.setText(savedState);
     }
 
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("saved", saved);
+        outState.putString(Const.SAVE_INSTANCE_KEY, savedState);
     }
 
     void findViews() {

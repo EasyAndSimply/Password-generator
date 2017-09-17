@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 generatePassword();
             }
         });
-
         btnBuffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

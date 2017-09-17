@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ClipboardManager myClipboard;
     private ClipData myClip;
     private String saved;
-    public StringBuilder thisispass;
+    public StringBuilder passwordEnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,12 +82,12 @@ public class MainActivity extends AppCompatActivity {
         passwordGenerated.CheckNumbersBox(true);
         passwordGenerated.PassLenghtCheck(passwordLenght);
         passwordGenerated.buildPassword();
-        thisispass = passwordGenerated.buildPassword();
-        tvPassword.setText(thisispass);
+        passwordEnd = passwordGenerated.buildPassword();
+        tvPassword.setText(passwordEnd);
     }
 
     void copyToClipboard(){
-        myClip = ClipData.newPlainText("text", thisispass);
+        myClip = ClipData.newPlainText("text", tvPassword.getText());
         myClipboard.setPrimaryClip(myClip);
         Toast.makeText(getApplicationContext(), "Text Copied", Toast.LENGTH_SHORT).show();
     }

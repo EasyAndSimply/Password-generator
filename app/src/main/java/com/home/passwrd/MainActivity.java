@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(Const.SAVE_INSTANCE_KEY, savedState);
+        outState.putString(Const.SAVE_INSTANCE_KEY, tvPassword.getText().toString());
     }
 
     void findViews() {

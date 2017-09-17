@@ -8,11 +8,10 @@ import java.util.Random;
  */
 
 public class PasswordGenerator {
-
     public final String MY_LOG = "My Log";
-    boolean isNumberEnabled;
-    boolean isSimbolEnabled;
-    boolean isLetterEnablet;
+    private boolean isNumberEnabled;
+    private boolean isSymbolEnabled;
+    private boolean isLetterEnablet;
 
     private int passwordLenght = 1;
     private String result = "";
@@ -23,7 +22,7 @@ public class PasswordGenerator {
     }
 
     public void setIsSimbolsEnabled(boolean isSimbolEnabled){
-        this.isSimbolEnabled=isSimbolEnabled;
+        this.isSymbolEnabled=isSimbolEnabled;
     }
 
     public void setIsLettersEnabled(boolean isLetterEnabled){
@@ -31,15 +30,15 @@ public class PasswordGenerator {
     }
 
     public void CheckNumbersBox(boolean check) {
-        if (check = true) {
-            if ((isNumberEnabled | isSimbolEnabled | isLetterEnablet)== true) {
-                if (isNumberEnabled == true) {
+        if (check) {
+            if ((isNumberEnabled | isSymbolEnabled | isLetterEnablet)) {
+                if (isNumberEnabled) {
                     result = result + Const.NUMBERS;
                 }
-                if (isSimbolEnabled == true) {
+                if (isSymbolEnabled) {
                     result = result + Const.SYMBOLS;
                 }
-                if (isLetterEnablet == true) {
+                if (isLetterEnablet) {
                     result = result + Const.LETTERS;
                 }else{}
             }

@@ -50,7 +50,7 @@
         android:id="@+id/edNumbers"
         android:layout_width="@dimen/edNumbers_Land_layout_width"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/edNumbers_layout_marginTop"
+        android:layout_marginTop="@dimen/edNumbers_land_margintop"
         android:text="@string/edNumbers_text"
         android:inputType="number"
         android:gravity="center"

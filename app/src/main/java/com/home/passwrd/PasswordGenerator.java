@@ -53,10 +53,13 @@ public class PasswordGenerator {
             randomPass = new StringBuilder();
             int index;
         Log.e(MY_LOG , "ТУТ"+result);
+        if(result!="") {
             for (int i = 0; i < passwordLenght; i++) {
                 index = new Random().nextInt(result.length());
                 randomPass.append(result.charAt(index));
             }
             return randomPass;
+        }
+        return null;
     }
 }

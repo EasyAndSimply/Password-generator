@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PASSWRD</string>
+    <string name="btnBuffer_text">Копировать</string>
+    <string name="tvPassword_text">Пароль</string>
+    <string name="cbNumbers_text">Цифры</string>
+    <string name="cbSimbols_text">Символы</string>
+    <string name="cbLetters_text">Буквы</string>
+    <string name="edNumbers_text">0</string>
+    <string name="btnGener_text">Создать</string>
+    <string name="tvText_text">Введите кол.</string>
+
 </resources>

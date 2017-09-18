@@ -13,8 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="17dp"
-        android:layout_weight="1"
+        android:layout_marginTop="@dimen/tvPassword_Land_layout_marginTop"
         android:text="Пароль"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -26,8 +25,7 @@
         android:layout_alignBaseline="@+id/cbSimbols"
         android:layout_alignBottom="@+id/cbSimbols"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:layout_weight="1"
+        android:layout_marginEnd="@dimen/cbNumbers_Land_layout_marginEnd"
         android:text="Цифры" />
 
     <CheckBox
@@ -36,8 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp"
-        android:layout_weight="1"
+        android:layout_marginTop="@dimen/cbSimbols_Land_layout_marginTop"
         android:text="Символы" />
 
     <CheckBox
@@ -47,15 +44,14 @@
         android:layout_alignBaseline="@+id/cbSimbols"
         android:layout_alignBottom="@+id/cbSimbols"
         android:layout_alignParentStart="true"
-        android:layout_weight="1"
         android:hint="Буквы"
         android:text="Буквы" />
 
     <EditText
         android:id="@+id/edNumbers"
-        android:layout_width="30sp"
+        android:layout_width="@dimen/edNumbers_Land_layout_width"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/edNumbers_layout_marginTop"
         android:text="0"
         android:inputType="number"
         android:gravity="center"
@@ -76,7 +72,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1"
         android:text="Создать"
         android:layout_below="@+id/edNumbers"
         android:layout_toEndOf="@+id/cbLetters" />
@@ -88,6 +83,6 @@
         android:text="Копировать"
         android:layout_below="@+id/edNumbers"
         android:layout_alignEnd="@+id/cbNumbers"
-        android:layout_marginEnd="12dp" />
+        android:layout_marginEnd="@dimen/btnBuffer_Land_layout_marginEnd" />
 
 </RelativeLayout>

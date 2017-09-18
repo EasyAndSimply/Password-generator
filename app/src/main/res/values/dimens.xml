@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tvPassword_marginTop">66dp</dimen>
+    <dimen name="cbNumbers_marginEnd">20dp</dimen>
+    <dimen name="cbSimbols_marginTop">64dp</dimen>
+    <dimen name="edNumbers_layout_width">30sp</dimen>
+    <dimen name="edNumbers_layout_marginTop">80dp</dimen>
+    <dimen name="btnGener_layout_marginBottom">93dp</dimen>
+    <dimen name="btnBuffer_layout_marginStart">11dp</dimen>
+    <dimen name="tvPassword_Land_layout_marginTop">17dp</dimen>
+    <dimen name="cbNumbers_Land_layout_marginEnd">20dp</dimen>
+    <dimen name="cbSimbols_Land_layout_marginTop">61dp</dimen>
+    <dimen name="edNumbers_Land_layout_width">30sp</dimen>
+    <dimen name="edNumbers_Land_layout_marginTop">30dp</dimen>
+    <dimen name="btnBuffer_Land_layout_marginEnd">12dp</dimen>
+</resources>

@@ -13,11 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1"
         android:text="Пароль"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp" />
+        android:layout_marginTop="@dimen/tvPassword_marginTop" />
 
     <CheckBox
         android:id="@+id/cbNumbers"
@@ -26,25 +25,22 @@
         android:layout_alignBaseline="@+id/cbSimbols"
         android:layout_alignBottom="@+id/cbSimbols"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:layout_weight="1"
+        android:layout_marginEnd="@dimen/cbNumbers_marginEnd"
         android:text="Цифры" />
 
     <CheckBox
         android:id="@+id/cbSimbols"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="Символы"
         android:layout_below="@+id/tvPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp" />
+        android:layout_marginTop="@dimen/cbSimbols_marginTop" />
 
     <CheckBox
         android:id="@+id/cbLetters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:hint="Буквы"
         android:text="Буквы"
         android:layout_alignBaseline="@+id/cbSimbols"
@@ -53,11 +49,11 @@
 
     <EditText
         android:id="@+id/edNumbers"
-        android:layout_width="30sp"
+        android:layout_width="@dimen/edNumbers_layout_width"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cbSimbols"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="@dimen/edNumbers_layout_marginTop"
         android:text="0"
         android:inputType="number"
         android:gravity="center" />
@@ -67,9 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1"
         android:text="Создать"
-        android:layout_marginBottom="93dp"
+        android:layout_marginBottom="@dimen/btnGener_layout_marginBottom"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/cbLetters" />
 
@@ -90,6 +85,6 @@
         android:layout_alignBaseline="@+id/btnGener"
         android:layout_alignBottom="@+id/btnGener"
         android:layout_toEndOf="@+id/tvPassword"
-        android:layout_marginStart="11dp" />
+        android:layout_marginStart="@dimen/btnBuffer_layout_marginStart" />
 
 </RelativeLayout>
